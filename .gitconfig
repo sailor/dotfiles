@@ -1,0 +1,10 @@
+[user]
+	name = Salim Semaoune
+	email = salim.semaoune@bolloretelecom.eu
+[color]
+	ui = true
+[alias]
+	st = status
+[git-tmbundle]
+	gitnub-path = /usr/local/bin/nub
+	gitx-path = /usr/local/bin/gitx
