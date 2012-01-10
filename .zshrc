@@ -37,6 +37,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/Users/salim/.rvm/gems/ruby-1.8.7-p330/bin:/Users/salim/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/salim/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/salim/.rvm/bin
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 alias gitmergeprod="git checkout production && git fetch && git rebase origin/production && git merge master --no-ff && git checkout master"
 alias gitxpending='gitx production..master'
 alias pushanddeploy='git push && cap deploy && cap deploy:cleanup'
