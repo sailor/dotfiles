@@ -5,8 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="cloud"
+ZSH_THEME="af-magic"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -30,16 +29,30 @@ ZSH_THEME="cloud"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails git textmate ruby rvm)
+plugins=(rails git textmate ruby rvm virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/Users/salim/.rvm/gems/ruby-1.8.7-p330/bin:/Users/salim/.rvm/gems/ruby-1.8.7-p330@global/bin:/Users/salim/.rvm/rubies/ruby-1.8.7-p330/bin:/Users/salim/.rvm/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 alias gitmergeprod="git checkout production && git fetch && git rebase origin/production && git merge master --no-ff && git checkout master"
 alias gitxpending='gitx production..master'
-alias pushanddeploy='git push && cap deploy && cap deploy:cleanup'
+alias pushanddeploy='ref=$(git symbolic-ref HEAD) && git push origin ${ref#refs/heads/} && bundle exec cap deploy deploy:cleanup'
+alias dit='osascript -e "set Volume 5" && say "$1"'
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# To avoid perl warning
+# unset LC_CTYPE
+
+### Added by the Heroku Toolbelt
+export PATH="$PATH:/usr/local/heroku/bin"
+
+# Automatic merge message
+# export GIT_MERGE_AUTOEDIT=no
+
+# zsh syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
