@@ -33,5 +33,5 @@ set wrap
 :map <Up> gk
 :map <Down> gj
 
-" folding
-set foldmethod=marker
+" highlight searched matches
+set hlsearch
