@@ -1,10 +1,30 @@
 [user]
 	name = Salim Semaoune
-	email = salim.semaoune@bolloretelecom.eu
+	email = salim.semaoune@wifirst.fr
 [color]
 	ui = true
 [alias]
 	st = status
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
 [git-tmbundle]
 	gitnub-path = /usr/local/bin/nub
 	gitx-path = /usr/local/bin/gitx
+[help]
+	autocorrect = 1
+[core]
+	pager = less -X
+	excludesfile = /Users/salim/.gitignore_global
+	mergeoptions = --no-edit
+[credential]
+	helper = osxkeychain
+[push]
+	default = upstream
+[http]
+	postBuffer = 524288000
