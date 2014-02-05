@@ -45,14 +45,11 @@ alias dit='osascript -e "set Volume 5" && say "$1"'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# To avoid perl warning
-# unset LC_CTYPE
-
 ### Added by the Heroku Toolbelt
 export PATH="$PATH:/usr/local/heroku/bin"
 
 # Automatic merge message
-# export GIT_MERGE_AUTOEDIT=no
+export GIT_MERGE_AUTOEDIT=no
 
 # zsh syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
